@@ -32,7 +32,7 @@ class Main(unittest.TestCase):
 		ed.editar_grupo()
 
 	def tearDown(self):
-		self.driver.quit()
+		self.driver.q
 
 
 
