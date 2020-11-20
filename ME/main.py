@@ -30,9 +30,9 @@ class Main(unittest.TestCase):
 		#Editar grupo
 		ed = Editar(self.driver)
 		ed.editar_grupo()
-		
+
 	def tearDown(self):
-		self.driver.q
+		self.driver.quit()
 
 
 
