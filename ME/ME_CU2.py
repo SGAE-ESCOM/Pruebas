@@ -3,7 +3,7 @@ import time
 
 
 #Clase para Registrar de grupos.
-class Gestionar_Grupos:
+class Registrar_Grupos:
 	def __init__(self,driver):
 		self.driver = driver
 	#crear grupo 
@@ -13,7 +13,7 @@ class Gestionar_Grupos:
 		time.sleep(2)
 		self.driver.find_element_by_xpath('/html/body/app-root/app-sidenav/div/mat-sidenav-container/mat-sidenav-content/div/app-grupos/div/div/div[2]/app-tabla/div[1]/div[2]/div/div/button').click()
 		time.sleep(2)
-		programa = ['','Ciencia De Datos']
+		programa = ['','Deep Learning']
 		inp = self.driver.find_elements_by_class_name('mat-input-element')
 		for i in range(0,len(programa)):
 			inp[i].send_keys(programa[i])
