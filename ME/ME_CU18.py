@@ -39,7 +39,7 @@ class Editar_Evaluaciones:
             time.sleep(1)
         
         #Agregar
-        self.driver.find_element_by_name('btnModalActualiza').click()
+        self.driver.find_element_by_name('btnModalActualiza').click( 
         time.sleep(2)
 
         print("... Test Case 'Editar Evaluaciones' Successful ...")
