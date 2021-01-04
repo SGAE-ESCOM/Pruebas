@@ -16,6 +16,8 @@ from ME_CU16 import *
 from ME_CU17 import *
 from ME_CU18 import * 
 from ME_CU19 import *
+from ME_CU20 import *
+from ME_CU21 import *
 from selenium import webdriver
 import unittest
 import time
@@ -36,8 +38,8 @@ class Main(unittest.TestCase):
 		loginA = Login('root@test.com','root1234',self.driver)
 		loginA.login()
 		#Indice Evaluacion
-		#ie = Indice_evaluacion(self.driver)
-		#ie.indice()
+		ie = Indice_evaluacion(self.driver)
+		ie.indice()
 		
 		### Gestionar Grupos ###
 		def gestionar_grupos(self,driver):
@@ -48,12 +50,13 @@ class Main(unittest.TestCase):
 			ed = Editar(self.driver)
 			ed.editar_grupo()
 			time.sleep(2)
+			
 
 		### Gestionar Evaluacion ###
 		def gestionar_evaluacion(self, driver):
 			#Indice
-			#vge = Visualizacion_GestionEvaluacion(self.driver)
-			#vge.visualizacion()
+			vge = Visualizacion_GestionEvaluacion(self.driver)
+			vge.visualizacion()
 
 			def secciones(self, driver):
 				#Registrar Secciones
@@ -78,20 +81,20 @@ class Main(unittest.TestCase):
 				vt.visualizar_temas()
 
 			def preguntas(self, driver):
-				#Visualizar preguntas
-				#vp = Visualizar_Preguntas(self.driver)
-				#vp.visualizar_preguntas()
 				#Registrar Preguntas
-				#rp = Registrar_Preguntas(self.driver)
-				#rp.registrar_preguntas()
+				rp = Registrar_Preguntas(self.driver)
+				rp.registrar_preguntas()
 				#Editar Preguntas
 				ep = Editar_Preguntas(self.driver)
 				ep.editar_preguntas()
+				#Visualizar preguntas
+				vp = Visualizar_Preguntas(self.driver)
+				vp.visualizar_preguntas()
 			
 			def evaluacion(self, driver):
 				#Registrar Evluaciones
-				#re = Registrar_Evaluaciones(self.driver)
-				#re.registrar_evaluaciones()
+				re = Registrar_Evaluaciones(self.driver)
+				re.registrar_evaluaciones()
 				#Editar Evaluaciones
 				ee = Editar_Evaluaciones(self.driver)
 				ee.editar_evaluaciones()
@@ -101,21 +104,28 @@ class Main(unittest.TestCase):
 
 
 			
-			#secciones(self,self.driver)
-			#temas(self,self.driver)
-			#preguntas(self, self.driver)
+			secciones(self,self.driver)
+			temas(self,self.driver)
+			preguntas(self, self.driver)
 			evaluacion(self, self.driver)
 		
 		### Gestionar Evaluacion ###
 		def aplicacion(self,driver):
+			#Registrar Aplicaciones 
+			ra = Registrar_Aplicaciones(self.driver)
+			ra.registrar_aplicaciones()
+			#Editar Aplicaciones
+			ea = Editar_Aplicaciones(self.driver)
+			ea.editar_aplicaciones()
 			#Visualizar Aplicaciones
 			va = Visualizar_Aplicaciones(self.driver)
 			va.visualizar_aplicaciones()
 
 
 
-		#gestionar_grupos(self,self.driver)
-		#gestionar_evaluacion(self,self.driver)
+
+		gestionar_grupos(self,self.driver)
+		gestionar_evaluacion(self,self.driver)
 		aplicacion(self,self.driver)
 
 

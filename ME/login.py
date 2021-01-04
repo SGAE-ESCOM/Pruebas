@@ -19,3 +19,6 @@ class Login:
 		#IniciarSesion
 		self.driver.find_element_by_xpath('//*[@id="login"]/div/div/div/div/div/div/form/button').click()
 		time.sleep(4)
+		print("==============================================")
+		print("... Test Case 'Login' Successful ...")
+		print("==============================================")

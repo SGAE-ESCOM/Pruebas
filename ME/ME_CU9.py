@@ -28,20 +28,19 @@ class Visualizar_Temas:
         def buscar(self):
             buscar = self.driver.find_element_by_id('txtBuscar')
             buscar.send_keys("Atomos")
-            time.sleep(3)
+            time.sleep(2)
             buscar.clear()
+            time.sleep(2)
         
         def eliminar(self):
             buscar(self)
             self.driver.find_element_by_name('btnEliminar').click()
             time.sleep(2)
-            self.driver.find_element_by_name('btnConfiramar').click()
-            time.sleep(4)
-            #confirmar = [-1]
-            #ok = self.driver.find_elements_by_class_name('swal2-confirm mat-button')
-            #print(" longitud : ",len(ok))
-            #for i in confirmar:
-            #    ok[i].click()
-            #time.sleep(2)
+            self.driver.find_elements_by_class_name('swal2-confirm.mat-button.mat-button-base.mat-danger')[0].click()
+            time.sleep(2)
+            self.driver.find_elements_by_class_name('swal2-confirm.mat-button.mat-button-base.mat-info')[0].click()
+            time.sleep(2)
 
         eliminar(self)
+        print("... Test Case 'Visualizar Temas' Successful ...")
+        print("==============================================")

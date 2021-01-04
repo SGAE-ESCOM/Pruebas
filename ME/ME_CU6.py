@@ -23,21 +23,21 @@ class Visualizar_Secciones:
         #Busqueda
         def buscar(self):
             buscar = self.driver.find_element_by_id('txtBuscar')
-            buscar.send_keys("Química")
-            time.sleep(3)
+            buscar.send_keys("Historia")
+            time.sleep(2)
             buscar.clear()
         
         def eliminar(self):
             buscar(self)
             self.driver.find_element_by_name('btnEliminar').click()
             time.sleep(2)
-            #self.driver.find_element_by_name('btnConfiramar').click()
-            #time.sleep(4)
-            #confirmar = [-1]
-            #ok = self.driver.find_elements_by_class_name('swal2-confirm mat-button')
-            #print(" longitud : ",len(ok))
-            #for i in confirmar:
-            #    ok[i].click()
-            #time.sleep(2)
+            self.driver.find_elements_by_class_name('swal2-confirm.mat-button.mat-button-base.mat-danger')[0].click()
+            time.sleep(2)
+            self.driver.find_elements_by_class_name('swal2-confirm.mat-button.mat-button-base.mat-info')[0].click()
+            time.sleep(2)
+            
 
         eliminar(self)
+        print("... Test Case 'Visualizar Secciones' Successful ...")
+        print("==============================================")
+        

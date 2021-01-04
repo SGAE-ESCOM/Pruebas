@@ -18,7 +18,14 @@ class Editar_Secciones:
        #Boton ir a preguntas
         #self.driver.find_element_by_xpath('/html/body/app-root/app-sidenav/div/mat-sidenav-container/mat-sidenav-content/div/app-main-gestionar-evaluacion/div/div/div/app-cards/div/div[1]').click()
         #time.sleep(2)
-        datos = ['', 'Química II']
+        #Busqueda
+        def buscar(self):
+            buscar = self.driver.find_element_by_id('txtBuscar')
+            buscar.send_keys("Química")
+            time.sleep(2)
+
+        buscar(self)    
+        datos = ['', 'Química I']
         btn_actualizar = self.driver.find_element_by_name('btnActualizar')
         btn_actualizar.click()
         time.sleep(2)
@@ -28,7 +35,11 @@ class Editar_Secciones:
             inp[i].send_keys(datos[i])
         time.sleep(2)
         self.driver.find_element_by_name('btnModalActualiza').click()
-        time.sleep(4)
+        time.sleep(1)
+        #self.driver.refresh()
+        time.sleep(3)
+        print("... Test Case 'Editar Secciones' Successful ...")
+        print("==============================================")
 
 
         

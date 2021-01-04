@@ -22,6 +22,11 @@ class Editar_Temas:
         #Boton de ir a gestionar temas
         #self.driver.find_element_by_xpath('/html/body/app-root/app-sidenav/div/mat-sidenav-container/mat-sidenav-content/div/app-main-preguntas/div/div/div[2]/app-tabla/div[2]/div/table/tbody/tr[1]/td[2]/button[1]').click()
         #time.sleep(2)
+        buscar = self.driver.find_element_by_id('txtBuscar')
+        buscar.send_keys("Elementos")
+        time.sleep(2)
+        buscar.clear()
+        time.sleep(2)
 
         
         datos = ['', 'Elementos y Compuestos']
@@ -35,3 +40,5 @@ class Editar_Temas:
         time.sleep(2)
         self.driver.find_element_by_name('btnModalActualiza').click()
         time.sleep(4)
+        print("... Test Case 'Editar Temas' Successful ...")
+        print("==============================================")

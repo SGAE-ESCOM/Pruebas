@@ -20,4 +20,6 @@ class Registrar_Grupos:
 		time.sleep(4)
 		self.driver.find_element_by_name('btnModalAgregar').click()
 		time.sleep(4)
+		print("... Test Case 'Registrar Grupo' Successful ...")
+		print("==============================================")
 

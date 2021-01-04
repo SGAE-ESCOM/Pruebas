@@ -20,7 +20,7 @@ class Registrar_Secciones:
        #Boton ir a preguntas
         self.driver.find_element_by_xpath('/html/body/app-root/app-sidenav/div/mat-sidenav-container/mat-sidenav-content/div/app-main-gestionar-evaluacion/div/div/div/app-cards/div/div[1]').click()
         time.sleep(2)
-        datos = ['Historia','Español']
+        datos = ['Historia','Química']
         inp = []
         btn_agregar = self.driver.find_element_by_xpath('/html/body/app-root/app-sidenav/div/mat-sidenav-container/mat-sidenav-content/div/app-main-preguntas/div/div/div[2]/app-tabla/div[1]/div[2]/div/div/button')
         for i in range(0,len(datos)):
@@ -33,4 +33,6 @@ class Registrar_Secciones:
             time.sleep(2)
             btn_agregar_modal.click()
             time.sleep(2)
+        print("... Test Case 'Registrar Secciones' Successful ...")
+        print("==============================================")
         

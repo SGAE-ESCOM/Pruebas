@@ -33,15 +33,18 @@ class Editar:
 			time.sleep(2)
 			self.driver.find_elements_by_name('btnConfiramar')
 			time.sleep(2)
-			#print("La longitud es",len(self.driver.find_elements_by_class_name('swal2-confirm mat-button mat-button-base')))
-			#ok = [32]
-			#eliminar = self.driver.find_elements_by_class_name('swal2-confirm mat-button mat-button-base')
-			#for i in ok:
-				#eliminar[i].click()
-				#time.sleep(2)
+			self.driver.find_elements_by_class_name('swal2-confirm.mat-button.mat-button-base.mat-danger')[0].click()
+			time.sleep(2)
+			self.driver.find_elements_by_class_name('swal2-confirm.mat-button.mat-button-base.mat-info')[0].click()
+			self.driver.refresh()
+			time.sleep(2)
+
+			
 
 		buscar(self)
 		elminar(self)
 		self.driver.back()
 		time.sleep(2)
+		print("... Test Case 'Editar Grupo' Successful ...")
+		print("==============================================")
 

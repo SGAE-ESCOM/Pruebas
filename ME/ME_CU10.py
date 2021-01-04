@@ -1,3 +1,4 @@
+from ME_CU8 import *
 import unittest
 from selenium import webdriver
 import time
@@ -19,13 +20,18 @@ class Registrar_Temas:
         #self.driver.find_element_by_xpath('/html/body/app-root/app-sidenav/div/mat-sidenav-container/mat-sidenav-content/div/app-main-gestionar-evaluacion/div/div/div/app-cards/div/div[1]').click()
         #time.sleep(2)
 
-        #Boton de ir a gestionar temas
-        self.driver.find_element_by_xpath('/html/body/app-root/app-sidenav/div/mat-sidenav-container/mat-sidenav-content/div/app-main-preguntas/div/div/div[2]/app-tabla/div[2]/div/table/tbody/tr[1]/td[2]/button[1]').click()
+        #Busqueda de química def buscar(self):
+        buscar = self.driver.find_element_by_id('txtBuscar')
+        buscar.send_keys("Química")
         time.sleep(2)
 
-        datos = ['Reacciones Químicas','Elementos']
+        #Boton de ir a gestionar temas
+        self.driver.find_element_by_name('btnDetalles').click()
+        time.sleep(2)
+
+        datos = ['Reacciones Químicas','Elementos','Atomos']
         inp = []
-        btn_agregar = self.driver.find_element_by_xpath('/html/body/app-root/app-sidenav/div/mat-sidenav-container/mat-sidenav-content/div/app-main-preguntas/div/div/div[2]/app-tabla/div[1]/div[2]/div/div/button')
+        btn_agregar = self.driver.find_element_by_name('btnAgregar')
         for i in range(0,len(datos)):
             btn_agregar.click()
             time.sleep(1)
@@ -36,4 +42,6 @@ class Registrar_Temas:
             time.sleep(2)
             btn_agregar_modal.click()
             time.sleep(2)
+        print("... Test Case 'Registrar Temas' Successful ...")
+        print("==============================================")
         
